@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storia F1</title>
+  <link rel="stylesheet" href="database.css">
+  
+  <style>
+.timeline-item .year {
+    position: absolute;
+    left: -60px; /* Posizione a sinistra rispetto alla timeline */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline più stretta per accomodare l'anno */
+.timeline {
+    margin: 20px auto;
+    padding: 10px 0;
+    border-left: 4px solid #ff0000;
+    max-width: 800px;
+    position: relative;
+}
+
+/* Layout delle colonne */
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding-left: 80px; /* Spazio per l'anno */
+    position: relative;
+}
+
+.timeline-item .column {
+    width: 48%;
+    text-align: center;
+}
+
+/* Stile per immagini */
+.timeline-item img.image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Responsivo: Modifica per schermi più piccoli */
+@media screen and (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .timeline-item .year {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    .timeline-item .column {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+.toggle-btn {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Nascondi la timeline inizialmente */
+.timeline {
+    
+	display: block;
+}
+
+/* Mostra la timeline quando attivata */
+.timeline.hidden {
+	display: none;
+}
+  </style>
+</head>
+<body>
+	<header>
+		<a href="index.html" class="logo"><img src="Immagini/home.png" alt="Logo Home"></a>
+		<h1>Storia della F1</h1>
+	</header>
+	<nav>
+		 <div class="InputContainer">
+			<input placeholder="Cerca..." id="input" class="input" name="text" type="text">
+		</div>
+	</nav>
+
+	<main>
+		<div class="grid">
+			<a href="F1_Storia50.html" class="card">
+				<img src="immagini/Motori/F1/50.jpg" alt="F1">
+				<p>Anni 50</p>
+			</a>
+			<a href="F1_Storia60.html" class="card">
+				<img src="immagini/Motori/F1/60.jpeg" alt="F1">
+				<p>Anni 60</p>
+			</a>
+			<a href="F1_Storia70.html" class="card">
+				<img src="immagini/Motori/F1/70.jpeg" alt="F1">
+				<p>Anni 70</p>
+			</a>
+			<a href="F1_Storia80.html" class="card">
+				<img src="immagini/Motori/F1/80.jpeg" alt="F1">
+				<p>Anni 80</p>
+			</a>
+			<a href="F1_Storia90.html" class="card">
+				<img src="immagini/Motori/F1/90.jpeg" alt="F1">
+				<p>Anni 90</p>
+			</a>
+			<a href="F1_Storia2000.html" class="card">
+				<img src="immagini/Motori/F1/2000.jpeg" alt="F1">
+				<p>Anni 2000</p>
+			</a>
+			<a href="F1_Storia2010.html" class="card">
+				<img src="immagini/Motori/F1/2010.jpeg" alt="F1">
+				<p>Anni 2010</p>
+			</a>
+			<a href="F1_Storia2020.html" class="card">
+				<img src="immagini/Motori/F1/2020.jpeg" alt="F1">
+				<p>Anni 2020</p>
+			</a>
+		</div>
+	</main>
+	<br><br>
+	
+	<!-- SCRIPT PER MOSTRARE O NASCONDERE LA TIMEELINE	
+	<script>
+		document.addEventListener("scroll", () => {
+		const items = document.querySelectorAll(".timeline-item");
+		items.forEach(item => {
+			const rect = item.getBoundingClientRect();
+			if (rect.top < window.innerHeight && rect.bottom > 0) {
+				item.style.opacity = 1;
+				item.style.transform = "translateX(0)";
+			}
+		 });
+		});
+		
+		function toggleTimeline(timelineId) {
+        const timeline = document.getElementById(timelineId);
+        timeline.classList.toggle('hidden');
+    }
+	</script>
+	-->
+	
+	<footer>
+		<p>Archivio di informazioni di Donato</p>
+		<p>© 2024 Il Mio Sito - Tutti i diritti riservati.</p>
+	</footer>
+</body>
+</html>

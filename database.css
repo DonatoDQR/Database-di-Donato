@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  display:flex;
+}
+
+h2{
+	text-align: center;
+} 
+
+header {
+    display: flex;
+    align-items: center; /* Allinea il logo e il titolo verticalmente */
+    padding: 10px 20px;
+    background-color: #333; /* Colore di sfondo del header */
+}
+
+header .logo img {
+    width: 50px; /* Dimensione del logo */
+    height: auto; /* Mantiene le proporzioni */
+    margin-right: 15px; /* Spazio tra il logo e il titolo */
+    cursor: pointer; /* Cambia il cursore al passaggio */
+	border: 0px solid black;
+}
+
+header h1{
+	font-size: 50px;
+    margin: 0;
+	flex: 1; /* Permette al titolo di adattarsi allo spazio disponibile */
+	text-align:center;
+	color:#fff;
+}
+
+
+
+main {
+  flex: 1;		/* necesssario perchè riempie lo spazio tra header e footer */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 50px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.card {
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 200px; /* Larghezza fissa */
+  height: 250px; /* Altezza fissa */
+  display: flex;
+  flex-direction: column; /* Organizza immagine e testo */
+  justify-content: space-between; /* Spazia immagine e testo */
+}
+
+.card img {
+  width: 100%; /* L'immagine si adatta alla larghezza della card */
+  height: 200px; /* Altezza fissa per le immagini */
+  object-fit: cover; /* Taglia o ridimensiona l'immagine per adattarla */
+  display: block;
+}
+
+.card p {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: right;
+}
+
+
+/* Barra di ricerca */
+.InputContainer {
+  width: 210px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom,rgb(227, 213, 255),rgb(255, 231, 231));
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+}
+.input {
+  width: 200px;
+  height: 40px;
+  border: none;
+  outline: none;
+  caret-color: rgb(255, 81, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  padding-left: 15px;
+  letter-spacing: 0.8px;
+  color: rgb(19, 19, 19);
+  font-size: 13.4px;
+}
+
+
+/* Come fare un tooltip */
+/* Stile del contenitore del tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Testo del tooltip (nascosto di default) */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 160px; /* Larghezza del tooltip */
+  background-color: #555; /* Colore di sfondo */
+  color: #fff; /* Colore del testo */
+  text-align: center;
+  border-radius: 5px; /* Angoli arrotondati */
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Posiziona il tooltip sopra l'elemento */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0; /* Tooltip nascosto */
+  transition: opacity 0.3s;
+}
+
+/* Freccia del tooltip */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Posiziona la freccia sotto il tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent; /* Colore della freccia */
+}
+
+/* Mostra il tooltip quando il mouse passa sopra */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+/* Stile generale per la timeline orizzontale */
+.timeline-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 0;
+  position: relative;
+  border-top: 2px solid #ddd; /* Linea orizzontale */
+  width: 100%; /* Rende la linea lunga quanto il contenitore */
+  max-width: 800px; /* Limita la larghezza massima */
+  margin: 20px auto; /* Centra la timeline */
+  
+}
+
+/* Singolo elemento della timeline */
+.timeline-item {
+  position: relative;
+  text-align: center;
+  margin: 0 25px; /* Spazio orizzontale tra gli item */
+  flex-grow: 0; /* Disabilita la crescita per evitare sovrapposizioni */
+}
+
+/* Punto centrale della timeline */
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #fff;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Contenuto del punto */
+.timeline-content {
+  margin-top: 20px;
+  width: 150px; /* Aumenta la larghezza */
+  background-color: #f9f9f9; /* Sfondo chiaro */
+  padding: 10px; /* Spazio interno */
+  border-radius: 5px; /* Angoli arrotondati */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombra per evidenziare */
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-align: center; /* Centra il testo */
+  word-wrap: break-word; /* Gestisce il testo lungo */
+}
+
+/* Hover sul punto della timeline */
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.2); /* Ingrandisce il punto */
+  background-color: #0056b3; /* Cambia il colore */
+}
+
+/* Hover sul contenuto della timeline */
+.timeline-item:hover .timeline-content {
+  opacity: 1; /* Rende il contenuto più visibile */
+  transform: translateY(-5px); /* Solleva leggermente il contenuto */
+}
+
+/* Titolo e testo del contenuto */
+.timeline-content h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsività */
+@media (max-width: 768px) {
+  .timeline-horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .timeline-dot {
+    left: 0;
+    transform: none;
+  }
+}
+
+
+/*  TIMELINE VERTICALE  */
+.timeline {
+  position: relative;
+  margin: 50px 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Singolo elemento della timeline */
+.timeline-item {
+  position: relative;
+  padding-left: 40px; /* Spazio per il punto */
+  margin-bottom: 20px;
+}
+
+/* Punto centrale nella timeline */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #007bff; /* Colore del punto */
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 1;
+}
+
+/* Linea verticale della timeline */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 10px;
+  bottom: -10px;
+  width: 2px;
+  background-color: #ddd; /* Colore della linea */
+  z-index: 0;
+}
+
+/* Contenuto della timeline */
+.timeline-content {
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+/* Titolo dell'evento */
+.timeline-content h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Testo dell'evento */
+.timeline-content p {
+  margin: 0;
+  color: #555;
+}
+
+/* Timeline responsive per schermi piccoli */
+@media (max-width: 768px) {
+  .timeline-item {
+    padding-left: 20px;
+  }
+  .timeline-item::before {
+    left: 5px;
+  }
+  .timeline-item::after {
+    left: 9px;
+  }
+}
+
+
+
+
+
+
+
+
+/*
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}

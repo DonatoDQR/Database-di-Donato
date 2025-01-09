@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anni 2020 - Storia F1</title>
+  <link rel="stylesheet" href="database.css">
+  
+  <style>
+.timeline-item .year {
+    position: absolute;
+    left: -60px; /* Posizione a sinistra rispetto alla timeline */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline più stretta per accomodare l'anno */
+.timeline {
+    margin: 20px auto;
+    padding: 10px 0;
+    border-left: 4px solid #ff0000;
+    max-width: 800px;
+    position: relative;
+}
+
+/* Layout delle colonne */
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding-left: 80px; /* Spazio per l'anno */
+    position: relative;
+}
+
+.timeline-item .column {
+    width: 48%;
+    text-align: center;
+}
+
+/* Stile per immagini */
+.timeline-item img.image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Responsivo: Modifica per schermi più piccoli */
+@media screen and (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .timeline-item .year {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    .timeline-item .column {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+  </style>
+</head>
+<body>
+	<header>
+		<a href="F1_Storia.html" class="logo"><img src="Immagini/home.png" alt="Logo Home"></a>
+		<h1>Anni 2020</h1>
+	</header>
+	<nav>
+		 <div class="InputContainer">
+			<input placeholder="Cerca..." id="input" class="input" name="text" type="text">
+		</div>
+	</nav>
+
+	<div>
+	<div class="timeline">
+        <div class="timeline-item">
+            <div class="year">
+                <p>2020</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/2014_hamilton.jpeg" alt="Giuseppe Farina" class="image">
+                <p><strong>Pilota:</strong> Lewis Hamilton</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1950_alfa158.jpeg" alt="Alfa Romeo 158" class="image">
+                <p><strong>Team:</strong> Mercedes AMG Petronas F1</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">
+                <p>2021</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/2021_verstappen.png" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Max Verstappen</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1951_alfa159.jpeg" alt="Alfa Romeo 159" class="image">
+                <p><strong>Team:</strong> Mercedes AMG Petronas F1</p>
+            </div>
+        </div>
+		<div class="timeline-item">
+            <div class="year">
+                <p>2022</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/2021_verstappen.png" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Max Verstappen</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1952_ferrari500.jpeg" alt="Alfa Romeo 159" class="image">
+                <p><strong>Team:</strong> Red Bull Racing</p>
+            </div>
+        </div>
+		<div class="timeline-item">
+            <div class="year">
+                <p>2023</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/2021_verstappen.png" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Max Verstappen</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1954_mercedesW196.jpeg" alt="Mercedes-Benz W196" class="image">
+                <p><strong>Team:</strong> Red Bull Racing</p>
+            </div>
+        </div>
+		<div class="timeline-item">
+            <div class="year">
+                <p>2024</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/2021_verstappen.png" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Max Verstappen</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1956_ferrariD50.jpeg" alt="Alfa Romeo 159" class="image">
+                <p><strong>Auto:</strong> McLaren</p>
+            </div>
+        </div>
+	</div>
+
+	<h2><button><a href="F1_Storia2010.html">Vai al decennio precedente</a></button></h2>
+	<footer>
+		<p>Archivio di informazioni di Donato</p>
+		<p>© 2024 Il Mio Sito - Tutti i diritti riservati.</p>
+	</footer>
+</body>
+</html>

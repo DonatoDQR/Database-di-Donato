@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geografia</title>
+  <link rel="stylesheet" href="database.css">
+
+</head>
+<body>
+	<header>
+		<a href="index.html" class="logo"><img src="Immagini/home.png" alt="Logo Home"></a>
+		<h1>Geografia</h1>
+	</header>
+	
+	<nav>
+		 <div class="InputContainer">
+			<input placeholder="Search.." id="input" class="input" name="text" type="text">
+		</div>
+	</nav>
+	
+	
+		<h2>Mappa dell'Italia</h2>
+		<div class="mappa-container">
+			<img src="Immagini/Geografia/Italia.jpeg" usemap="#italia-map" id="mappa" alt="Mappa dell'Italia">
+			<svg class="highlight" id="highlight"></svg>
+		</div>
+
+		<map name="italia-map">
+		  <area shape="poly" coords="327,300,460,377,475,362,360,300,367,273,332,275" 
+				alt="Puglia" 
+				title="Puglia" 
+				href="#" 
+				onmouseover="evidenziaRegione('327,300,460,377,475,362,360,300,367,273,332,275')" 
+				onmouseout="rimuoviEvidenziazione()">
+			
+		<area shape="poly" coords="57,337,105,320,120,360,120,430,77,445" 
+				alt="Sardegna" 
+				title="Sardegna" 
+				href="#" 
+				onmouseover="evidenziaRegione('57,337,105,320,120,360,120,430,77,445')" 
+				onmouseout="rimuoviEvidenziazione()">
+		</map>
+	
+	<style>
+	  .mappa-container {
+		position: relative;
+		display: inline-block;
+	  }
+
+	  #mappa {
+		display: block;
+	  }
+		.highlight {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none; /* Non interferisce con i clic */
+		  }
+
+		  .highlight polygon {
+			fill: rgba(255, 0, 0, 0.3); /* Colore rosso trasparente */
+			stroke: red; /* Contorno rosso */
+			stroke-width: 2;
+			transition: fill 0.3s ease, stroke 0.3s ease;
+		  }
+	</style>
+
+	<script>
+		function evidenziaRegione(coords) {
+		  const svg = document.getElementById("highlight");
+		  svg.innerHTML = ''; // Rimuove eventuali evidenziazioni precedenti
+
+		  const punti = coords.split(',').map(Number);
+		  let polygonPoints = '';
+
+		  for (let i = 0; i < punti.length; i += 2) {
+			polygonPoints += `${punti[i]},${punti[i + 1]} `;
+		  }
+
+		  const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+		  polygon.setAttribute("points", polygonPoints.trim());
+		  svg.appendChild(polygon);
+		}
+
+		function rimuoviEvidenziazione() {
+		  const svg = document.getElementById("highlight");
+		  svg.innerHTML = ''; // Rimuove l'evidenziazione
+		}
+	</script>
+	
+		
+	<!--
+		|||||||Mappa dell'Italia con regioni da evidenziare (non è venuto bene)|||||||
+		
+		
+	<div class="mappa-container">
+	  <img src="Immagini/Geografia/ItaliaNord.jpeg" usemap="#italia-map" id="mappa" alt="Mappa dell'Italia">
+	  <svg class="highlight" id="highlight">
+		<circle cx="240" cy="300" r="5" class="puntino" data-luogo="Bari" />
+		<circle cx="260" cy="320" r="5" class="puntino" data-luogo="Lecce" />
+
+		<circle cx="200" cy="420" r="5" class="puntino" data-luogo="Palermo" />
+		<circle cx="230" cy="440" r="5" class="puntino" data-luogo="Catania" />
+	  </svg>
+	</div>
+
+	<style>
+	  .mappa-container {
+		position: relative;
+		display: inline-block;
+	  }
+
+	  #mappa {
+		display: block;
+	  }
+
+	  .highlight {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none; /* Non interferisce con i clic */
+	  }
+
+	  .puntino {
+		fill: blue; /* Colore dei puntini */
+		stroke: white;
+		stroke-width: 2;
+		cursor: pointer;
+		pointer-events: all; /* Rende i puntini cliccabili */
+		transition: transform 0.2s ease, fill 0.2s ease;
+	  }
+
+	  .puntino:hover {
+		fill: red; /* Colore evidenziato */
+		transform: scale(1.5); /* Ingrandimento al passaggio del mouse */
+	  }
+
+	  .tooltip {
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.7);
+		color: white;
+		padding: 5px 10px;
+		border-radius: 5px;
+		font-size: 12px;
+		pointer-events: none;
+		display: none;
+	  }
+	</style>
+
+	<div class="tooltip" id="tooltip"></div>
+
+	<script>
+	  // Tooltip interattivo
+	  const tooltip = document.getElementById("tooltip");
+
+	  document.querySelectorAll(".puntino").forEach(puntino => {
+		puntino.addEventListener("mouseover", (e) => {
+		  const luogo = puntino.getAttribute("data-luogo");
+		  tooltip.style.display = "block";
+		  tooltip.style.left = `${e.pageX + 10}px`;
+		  tooltip.style.top = `${e.pageY + 10}px`;
+		  tooltip.textContent = luogo;
+		});
+
+		puntino.addEventListener("mousemove", (e) => {
+		  tooltip.style.left = `${e.pageX + 10}px`;
+		  tooltip.style.top = `${e.pageY + 10}px`;
+		});
+
+		puntino.addEventListener("mouseout", () => {
+		  tooltip.style.display = "none";
+		});
+
+		puntino.addEventListener("click", () => {
+		  alert(`Hai cliccato su ${puntino.getAttribute("data-luogo")}`);
+		});
+	  });
+	</script>
+	-->
+	<footer>
+		<p>Archivio di informazioni di Donato</p>
+		<p>© 2024 Il Mio Sito - Tutti i diritti riservati.</p>
+	</footer>
+</body>
+</html>

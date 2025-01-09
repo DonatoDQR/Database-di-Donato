@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anni 60 - Storia F1</title>
+  <link rel="stylesheet" href="database.css">
+  
+  <style>
+.timeline-item .year {
+    position: absolute;
+    left: -60px; /* Posizione a sinistra rispetto alla timeline */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline più stretta per accomodare l'anno */
+.timeline {
+    margin: 20px auto;
+    padding: 10px 0;
+    border-left: 4px solid #ff0000;
+    max-width: 800px;
+    position: relative;
+}
+
+/* Layout delle colonne */
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding-left: 80px; /* Spazio per l'anno */
+    position: relative;
+}
+
+.timeline-item .column {
+    width: 48%;
+    text-align: center;
+}
+
+/* Stile per immagini */
+.timeline-item img.image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Responsivo: Modifica per schermi più piccoli */
+@media screen and (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .timeline-item .year {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    .timeline-item .column {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+  </style>
+</head>
+<body>
+	<header>
+		<a href="F1_Storia.html" class="logo"><img src="Immagini/home.png" alt="Logo Home"></a>
+		<h1>Anni 60</h1>
+	</header>
+	<nav>
+		 <div class="InputContainer">
+			<input placeholder="Cerca..." id="input" class="input" name="text" type="text">
+		</div>
+	</nav>
+
+	<div>
+	<div class="timeline">
+        <div class="timeline-item">
+            <div class="year">
+                <p>1960</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/1950_farina.jpeg" alt="Giuseppe Farina" class="image">
+                <p><strong>Pilota:</strong> Giuseppe Farina</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1950_alfa158.jpeg" alt="Alfa Romeo 158" class="image">
+                <p><strong>Auto:</strong> Alfa Romeo 158</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">
+                <p>1961</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/1951_fangio.jpeg" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Juan Manuel Fangio</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1951_alfa159.jpeg" alt="Alfa Romeo 159" class="image">
+                <p><strong>Auto:</strong> Alfa Romeo 159</p>
+            </div>
+        </div>
+		<div class="timeline-item">
+            <div class="year">
+                <p>1962-53</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/1951_fangio.jpeg" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Alberto Ascari</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1952_ferrari500.jpeg" alt="Alfa Romeo 159" class="image">
+                <p><strong>Auto:</strong> Ferrari 500</p>
+            </div>
+        </div>
+		<div class="timeline-item">
+            <div class="year">
+                <p>1964-55</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/1951_fangio.jpeg" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Juan Manuel Fangio</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1954_mercedesW196.jpeg" alt="Mercedes-Benz W196" class="image">
+                <p><strong>Auto:</strong> Mercedes-Benz W196</p>
+            </div>
+        </div>
+		<div class="timeline-item">
+            <div class="year">
+                <p>1966</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/1951_fangio.jpeg" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Juan Manuel Fangio</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1956_ferrariD50.jpeg" alt="Alfa Romeo 159" class="image">
+                <p><strong>Auto:</strong> Ferrari D50</p>
+            </div>
+        </div>
+		<div class="timeline-item">
+            <div class="year">
+                <p>1967-58</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/1951_fangio.jpeg" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Juan Manuel Fangio</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1957_maserati250f.jpeg" alt="Alfa Romeo 159" class="image">
+                <p><strong>Auto:</strong> Maserati 250F</p>
+            </div>
+        </div>
+		<div class="timeline-item">
+            <div class="year">
+                <p>1969</p>
+            </div>
+            <div class="column pilot">
+                <img src="immagini/Motori/F1/1959_brabham.jpeg" alt="Juan Manuel Fangio" class="image">
+                <p><strong>Pilota:</strong> Jack Brabham</p>
+            </div>
+            <div class="column car">
+                <img src="immagini/Motori/F1/1959_cooperT51.jpeg" alt="Alfa Romeo 159" class="image">
+                <p><strong>Auto:</strong> Cooper T51</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+	<h2><button><a href="F1_Storia50.html">Vai al decennio precedente</a></button>
+	<button><a href="F1_Storia70.html">Vai al decennio successivo</a></button></h2>
+	<footer>
+		<p>Archivio di informazioni di Donato</p>
+		<p>© 2024 Il Mio Sito - Tutti i diritti riservati.</p>
+	</footer>
+</body>
+</html>

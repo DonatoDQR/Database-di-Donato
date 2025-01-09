@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Il Mio Database Personale</title>
+	<link rel="icon" type="image/png" href="immagini/info.png">
+	<link rel="stylesheet" href="database.css">
+	<link rel="manifest" href="manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker registrato!'))
+      .catch((error) => console.error('Errore nel registrare il Service Worker:', error));
+  }
+</script>
+</head>
+<body>
+	<header>
+		<h1>Il Mio Database Personale</h1>
+		<!-- <h3 style="color:#fff">Qui trovi tutte le informazioni che ho imparato negli anni</h3>	-->
+	</header>
+  
+	<main>
+		<div class="grid">
+			<a href="alimentazione.html" class="card">
+				<img src="immagini/alimentazione.jpeg" alt="Alimentazione">
+				<p>Alimentazione</p>
+			</a>
+			<a href="sport.html" class="card">
+				<img src="immagini/sport.jpeg" alt="Sport">
+				<p>Sport</p>
+			</a>
+			<a href="medicina.html" class="card">
+				<img src="immagini/medicina.jpeg" alt="Medicina">
+				<p>Medicina</p>
+			</a>
+			<a href="Storia.html" class="card">
+				<img src="immagini/Storia.jpeg" alt="Storia">
+				<p>Storia</p>
+			</a>
+			<a href="Letteratura.html" class="card">
+				<img src="immagini/letteratura.jpg" alt="Letteratura">
+				<p>Letteratura</p>
+			</a>
+			<a href="geografia.html" class="card">
+				<img src="immagini/geografia.jpeg" alt="Geografia">
+				<p>Geografia</p>
+			</a>
+			<a href="Motori.html" class="card">
+				<img src="immagini/Motori.jpg" alt="Motori">
+				<p>Motori</p>
+			</a>
+			<a href="Chimica.html" class="card">
+				<img src="immagini/Chimica.jpeg" alt="Chimica">
+				<p>Chimica</p>
+			</a>
+			<a href="Fisica.html" class="card">
+				<img src="immagini/Fisica.jpeg" alt="Fisica">
+				<p>Fisica</p>
+			</a>
+			<a href="altre-sezioni.html" class="card">
+				<img src="immagini/altre.jpeg" alt="Altre Sezioni">
+				<p>Altre Sezioni</p>
+			</a>
+		</div>
+	</main>
+	
+	<!--
+	<div class="tooltip">
+		Passa il mouse qui
+		<span class="tooltiptext">Questo è un tooltip!</span>
+	</div>
+	-->
+	
+	<footer>
+		<p>Archivio di informazioni di Donato</p>
+		<p>© 2024 Il Mio Sito - Tutti i diritti riservati.</p>
+	</footer>
+</body>
+</html>
